@@ -14,6 +14,10 @@ app.register_blueprint(chat_bp, url_prefix='/chat')
 # Set up WebSocket events
 setup_socketio_events(socketio)
 
+@app.route('/')
+def main_function():
+    return 'The flask backend is running :)     !!!'
+
 # Main entry point
 if __name__ == '__main__':
     socketio.run(app, debug=True)
